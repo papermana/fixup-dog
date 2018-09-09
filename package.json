@@ -14,9 +14,9 @@
   ],
   "scripts": {
     "dev": "nodemon",
-    "start": "probot run ./index.js",
-    "lint": "prettier-eslint --write index.js",
-    "test": "jest && prettier-eslint --list-different index.js",
+    "start": "probot run src/index.js",
+    "lint": "prettier-eslint --write 'src/**/*.js'",
+    "test": "jest && prettier-eslint --list-different 'src/**/*.js'",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {

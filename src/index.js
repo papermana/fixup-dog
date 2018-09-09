@@ -6,17 +6,8 @@ const { getStatusMessage } = require('./getStatusMessage');
 
 module.exports = (app) => {
   app.on(['pull_request.opened', 'pull_request.synchronize'], async (context) => {
-    context.log.child({
-      name: 'fixup-dog',
-      event: context.event.event,
-      action: context.payload.action,
-    });
-
     const currentStatus = await getCurrentStatus(context);
-    context.log.info('currentStatus', currentStatus);
-
     const newStatus = await getNewStatus(context);
-    context.log.info('newStatus', newStatus);
 
     if (currentStatus === newStatus) {
       return;

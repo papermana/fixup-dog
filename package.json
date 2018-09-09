@@ -46,5 +46,8 @@
       ".env",
       "."
     ]
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }

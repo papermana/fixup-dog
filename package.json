@@ -15,8 +15,8 @@
   "scripts": {
     "dev": "nodemon",
     "start": "probot run ./index.js",
-    "lint": "eslint --fix index.js",
-    "test": "jest && eslint index.js",
+    "lint": "prettier-eslint --write index.js",
+    "test": "jest && prettier-eslint --list-different index.js",
     "test:watch": "jest --watch --notify --notifyMode=change --coverage"
   },
   "dependencies": {
@@ -28,6 +28,7 @@
     "eslint-plugin-import": "^2.14.0",
     "jest": "^22.4.3",
     "nodemon": "^1.17.2",
+    "prettier-eslint-cli": "^4.7.1",
     "smee-client": "^1.0.2",
     "standard": "^10.0.3"
   },
